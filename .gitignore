@@ -10,3 +10,5 @@ tmp/**
 node_modules/
 .sass-cache
 __pycache__
+tex
+text
