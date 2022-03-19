@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=latex 2022.1.21)  19 MAR 2022 15:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=latex 2022.1.21)  19 MAR 2022 15:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./tex/24616c40e0552133.tex
-(tex/24616c40e0552133.tex
+**./tex/166dca1f00a30a8b.tex
+(tex/166dca1f00a30a8b.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2021-11-22>
 (C:\Users\benja\AppData\Local\Programs\MiKTeX\tex/latex/standalone\standalone.c
@@ -308,8 +308,8 @@ Package microtype Info: Loading configuration file microtype.cfg.
 (C:\Users\benja\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.cfg
 File: microtype.cfg 2021/12/10 v3.0b microtype main configuration file (RS)
 ))
-No file 24616c40e0552133.aux.
-\openout1 = `24616c40e0552133.aux'.
+No file 166dca1f00a30a8b.aux.
+\openout1 = `166dca1f00a30a8b.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
@@ -349,66 +349,25 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-6.
-(C:\Users\benja\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+7.
+(C:\Users\benja\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-6.
-(C:\Users\benja\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-26.
-(C:\Users\benja\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-26.
-(C:\Users\benja\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 26.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 26.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 26.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
-
-(C:\Users\benja\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (C:\Users\benja\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
-
-(C:\Users\benja\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (C:\Users\benja\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 26
-.
-(C:\Users\benja\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 26
-.
-(C:\Users\benja\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
-File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 Preview: Tightpage 0 0 0 0
-[1] (D:\pythontutorial1\tex\24616c40e0552133.aux) ) 
+[1] (D:\pythontutorial1\tex\166dca1f00a30a8b.aux) ) 
 Here is how much of TeX's memory you used:
- 8442 strings out of 478660
- 134969 string characters out of 2845946
- 470463 words of memory out of 3000000
- 26388 multiletter control sequences out of 15000+600000
- 425641 words of font info for 55 fonts, out of 8000000 for 9000
+ 8284 strings out of 478660
+ 131094 string characters out of 2845946
+ 469463 words of memory out of 3000000
+ 26285 multiletter control sequences out of 15000+600000
+ 412552 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,9n,77p,1019b,235s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,2n,77p,1019b,241s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on D:\pythontutorial1\tex\24616c40e0552133.dvi (1 page, 1656 byt
+Output written on D:\pythontutorial1\tex\166dca1f00a30a8b.dvi (1 page, 1700 byt
 es).

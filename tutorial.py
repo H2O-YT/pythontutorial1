@@ -1,6 +1,7 @@
 from manim import *
 from manim_revealjs import *
 import datetime
+from subprocess import Popen, PIPE
 
 
 config.video_dir = "videos"
@@ -21,6 +22,18 @@ class BoldTex(Tex):
         else:
             bold_tex_strings = ["\\textbf" + tex_strings[0], *tex_strings[1:-1], tex_strings[-1] + "}"]
         super().__init__(*bold_tex_strings, arg_separator=arg_separator, tex_environment=tex_environment, **kwargs)
+
+
+class MonospacedTex(Tex):
+    def __init__(self, *tex_strings, arg_separator="", tex_environment="center", **kwargs):
+        if len(tex_strings) == 1:
+            bold_tex_strings = ["\\texttt{" + tex_strings[0] + "}"]
+        elif len(tex_strings) == 2:
+            bold_tex_strings = ["\\texttt" + tex_strings[0], tex_strings[1] + "}"]
+        else:
+            bold_tex_strings = ["\\texttt" + tex_strings[0], *tex_strings[1:-1], tex_strings[-1] + "}"]
+        super().__init__(*bold_tex_strings, arg_separator=arg_separator, tex_environment=tex_environment, **kwargs)
+
 
 
 class Thumbnail(Scene):
@@ -44,93 +57,47 @@ class TitleSlide(PresentationScene):
         self.end_fragment()
 
 
-class Tarea1(PresentationScene):
+class Tarea(PresentationScene):
+
+    def construct_teach_part(self):
+        pass
+
+    def construct_demo_part(self):
+        pass
+
+    def construct_instructions_part(self, *instructions):
+        blist = BulletedList(*instructions).set_color(TEAL)
+        for item in blist:
+            self.play(Create(item))
+            self.end_fragment()
+
+
+class Tarea1(Tarea):
 
     def construct(self):
-        self.title = BoldTex("Calculadora de factoriales").scale(1.5).to_edge(UP)
-        self.add(self.title)
-        self.end_fragment()
-        self.get_teach_factorials_part()
-        self.get_demo_part()
-        self.get_requirements_part()
+        self.construct_demo_part()
+        self.construct_instructions_part("Crear una función que tome dos números.", "La función debe devolver el mayor de ellos.")
     
-    def get_teach_factorials_part(self):
-        tex = MathTex("1!=1")
-        tex2 = MathTex("\\forall n\\in\\mathbb{N}-\\{1\\} \\left(n!=n(n-1)!\\right)")
-        g = VGroup(tex, tex2).arrange(DOWN)
-        self.play(Write(tex))
+    def construct_demo_part(self):
+        import tarea1
+        title = BoldTex("Crear función \\texttt{max2}").scale(1.5).to_edge(UP)
+        self.add(title)
         self.end_fragment()
-        self.play(Write(tex2))
-        self.end_fragment()
-        self.play(FadeOut(g))
-        self.end_fragment()
-
-    def get_demo_part(self):
-        demos = VGroup()
-        i = 0
-
-        while i < 4:
-            demo = self.generate_demo_for()
-            demos.add(demo)
-            i += 1
-        
-        demos.arrange(DOWN)
-        
-        for demo in demos:
-            self.play(Write(demo[0]))
+        pares = [["5", "-7"], ["1", "3"], ["-1", "-2"], ["-2.5", "1/3"]]
+        group = VGroup()
+        for par in pares:
+            partial_group = VGroup()
+            tex1 = MonospacedTex("max2("+", ".join(par)+")").set_color(BLUE_E)
+            output = str(tarea1.max2(*[eval(numero) for numero in par]))
+            tex2 = MonospacedTex(output)
+            partial_group.add(tex1, tex2)
+            partial_group.arrange(DOWN)
+            group.add(partial_group)
+        group.arrange(DOWN)
+        for part in group:
+            self.play(Write(part[0]))
             self.end_fragment()
-            self.play(Create(demo[1]))
+            self.play(Create(part[1]))
             self.end_fragment()
-        
-        self.play(FadeOut(demos))
+        self.play(FadeOut(group))
         self.end_fragment()
-    
-    def get_requirements_part(self):
-        blist = BulletedList(
-            "La interfaz de usuario debe ser de tipo CLI", "Deben haber mensajes explícitos",
-            "Deben haber errores explícitos"
-        ).set_color(TEAL_E)
-        for part in blist:
-            self.play(Create(part))
-            self.end_fragment()
-
-    def generate_demo_for(self):
-        self.error_string1 = "¡El valor ingresado es un texto, no un número!"
-        self.error_string2 = "¡El valor ingresado no es un entero positivo!"
-        string = "Inserte número para calcular su factorial: "
-        numero = input(string)
-        demo = Tex(string+numero).set_color(RED_E)
-        resultado = self.factorial(numero)
-        if resultado != self.error_string1 and resultado != self.error_string2:
-            tex = Tex("El resultado es: "+str(resultado))
-        else:
-            tex = Tex(resultado).set_color(BLUE_E)
-        group = VGroup(demo, tex).arrange(DOWN)
-        return group
-    
-    def factorial(self, value) -> int | str:
-        try:
-            float(value)
-        except:
-            return self.error_string1
-        
-        value = float(value)
-        
-        try:
-            if not value.is_integer():
-                raise
-        except:
-            return self.error_string2
-
-        value = int(value)
-
-        try:
-            if value <= 0:
-                raise
-        except:
-            return self.error_string2
-
-        if value == 1:
-            return 1
-        else:
-            return value*self.factorial(value-1)
