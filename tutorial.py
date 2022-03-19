@@ -1,7 +1,6 @@
 from manim import *
 from manim_revealjs import *
 import datetime
-from subprocess import Popen, PIPE
 
 
 config.video_dir = "videos"
