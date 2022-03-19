@@ -49,6 +49,7 @@ class Tarea1(PresentationScene):
     def construct(self):
         self.title = BoldTex("Calculadora de factoriales").scale(1.5).to_edge(UP)
         self.add(self.title)
+        self.end_fragment()
         self.get_teach_factorials_part()
         self.get_demo_part()
         self.get_requirements_part()
