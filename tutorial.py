@@ -100,3 +100,50 @@ class Tarea1(Tarea):
             self.end_fragment()
         self.play(FadeOut(group))
         self.end_fragment()
+
+
+class Tarea2(Tarea):
+
+    def construct(self):
+        self.construct_teach_part()
+        self.construct_demo_part()
+        self.construct_instructions_part("\\texttt{factorial(n)} debe ser igual a $n!$")
+    
+    def construct_teach_part(self):
+        title = BoldTex("Crear función \\texttt{factorial}").scale(1.5).to_edge(UP)
+        self.add(title)
+        self.end_fragment()
+        text = Tex("$n!$ es el producto de los $n$ primeros enteros positivos.")
+        ejemplo = MathTex("3!", "=3\\cdot 2\\cdot 1", "=6")
+        ejemplo2 = MathTex("1!", "=1")
+        g = VGroup(text, ejemplo, ejemplo2).arrange(DOWN)
+        for i in range(len(g)):
+            if i == 0:
+                self.play(Write(g[i]))
+                self.end_fragment()
+            else:
+                for tex_string in g[i]:
+                    self.play(Write(tex_string))
+                    self.end_fragment()
+        self.play(FadeOut(g))
+        self.end_fragment()
+    
+    def construct_demo_part(self):
+        import tarea2
+        lst = ["1", "3", "13", "15"]
+        group = VGroup()
+        for i in lst:
+            partial_group = VGroup()
+            tex = MonospacedTex(i.join(["factorial(", ")"])).set_color(BLUE_E)
+            tex2 = MonospacedTex(str(tarea2.factorial(int(i))))
+            partial_group.add(tex, tex2)
+            partial_group.arrange(DOWN)
+            group.add(partial_group)
+        group.arrange(DOWN)
+        for part in group:
+            self.play(Write(part[0]))
+            self.end_fragment()
+            self.play(Create(part[1]))
+            self.end_fragment()
+        self.play(FadeOut(group))
+        self.end_fragment()
